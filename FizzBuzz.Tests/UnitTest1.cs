@@ -25,4 +25,12 @@ public class UnitTest1
         var result = FizzBuzzLogic.GetResult(15);
         Assert.Equal("FizzBuzz", result);
     }
+
+    [Fact]
+    public void GetResultReturnsNotFizzBuzz()
+    {
+        _ = new FizzBuzzLogic();
+        var result = FizzBuzzLogic.GetResult(1);
+        Assert.Equal("1", result);
+    }
 }
