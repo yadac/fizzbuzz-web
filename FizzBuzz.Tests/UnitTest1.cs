@@ -1,23 +1,20 @@
-using Xunit;
-using FizzBuzz;
-
-namespace FizzBuzz.Tests;
+﻿namespace FizzBuzz.Tests;
 
 public class UnitTest1
 {
     [Fact]
-    public void GetResult_ReturnsFizz_For3()
+    public void GetResultReturnsFizzFor3()
     {
-        var logic = new FizzBuzzLogic();
-        var result = logic.GetResult(3);
+        _ = new FizzBuzzLogic();
+        var result = FizzBuzzLogic.GetResult(3);
         Assert.Equal("Fizz", result);
     }
 
     [Fact]
-    public void GetResult_ReturnsFizz_For5()
+    public void GetResultReturnsFizzFor5()
     {
-        var logic = new FizzBuzzLogic();
-        var result = logic.GetResult(5);
+        _ = new FizzBuzzLogic();
+        var result = FizzBuzzLogic.GetResult(5);
         Assert.Equal("Buzz", result);
     }
 }
