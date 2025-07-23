@@ -2,13 +2,23 @@
 
 public class FizzBuzzLogic
 {
-	public static string GetResult(int number)
-	{
-		if (number % 3 == 0)
-		{
-			return "Fizz";
-		}
+    public static string GetResult(int number)
+    {
+        if (number % 15 == 0)
+        {
+            return "FizzBuzz";
+        }
 
-		return number % 5 == 0 ? "Buzz" : "Fizz";
-	}
+        if (number % 3 == 0)
+        {
+            return "Fizz";
+        }
+
+        if (number % 5 == 0)
+        {
+            return "Buzz";
+        }
+
+        return number.ToString();
+    }
 }
