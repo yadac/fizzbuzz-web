@@ -1,6 +1,6 @@
 name: Deploy to Azure Web App
 
-# masterブランチへのpushはPRマージでのみ実行されるように保護されています。
+# Pushes to the master branch are protected to only execute via PR merges.
 
 on:
   push:
