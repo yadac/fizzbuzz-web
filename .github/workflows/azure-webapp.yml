@@ -22,10 +22,13 @@ jobs:
       run: dotnet restore
 
     - name: Build
-      run: dotnet build ./FizzBuzz.Web/FizzBuzz.Web.csproj --configuration Release
+      run: dotnet build ./FizzBuzz.Web/FizzBuzz.Web.csproj -c Release
 
     - name: Publish
       run: dotnet publish ./FizzBuzz.Web/FizzBuzz.Web.csproj -c Release -o publish_output
+
+    - name: List publish output (for debug)
+      run: ls -R publish_output
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v3
