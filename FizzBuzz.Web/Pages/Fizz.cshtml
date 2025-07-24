@@ -1,0 +1,11 @@
+﻿@page
+@model FizzModel
+<form method="post">
+    <input type="number" name="InputNumber" value="@Model.InputNumber" />
+    <button type="submit">判定</button>
+</form>
+
+@if (Model.Result != null)
+{
+    <p>結果: <strong>@Model.Result</strong></p>
+}
