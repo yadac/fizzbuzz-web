@@ -2,7 +2,7 @@
 
 public class FizzBuzzLogic
 {
-    public static string GetResult(int number)
+    public string GetResult(int number)
     {
         if (number % 15 == 0)
         {
