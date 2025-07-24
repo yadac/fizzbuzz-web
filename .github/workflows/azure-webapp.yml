@@ -27,12 +27,6 @@ jobs:
     - name: Publish
       run: dotnet publish ./FizzBuzz.Web/FizzBuzz.Web.csproj -c Release -o publish_output
 
-    # - name: List publish output (for debug)
-    #   run: ls -R publish_output
-
-    # - name: Zip Publish Directory (flatten)
-    #   run: cd publish_output && zip -r ../publish_output.zip .
-
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v3
       with:
