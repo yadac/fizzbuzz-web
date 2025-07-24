@@ -41,7 +41,7 @@ jobs:
         run: dotnet restore
 
       - name: Test
-        run: dotnet test ./FizzBuzz.Web/FizzBuzz.Web.csproj -c Release --no-build
+        run: dotnet test ./FizzBuzz.Tests/FizzBuzz.Tests.csproj -c Release
 
   deploy:
     runs-on: ubuntu-latest
