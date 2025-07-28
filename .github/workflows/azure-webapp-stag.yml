@@ -37,10 +37,10 @@ jobs:
         working-directory: ./ClientApp
         run: npm run build
 
-      - name: Clean old React build publish_output
-        run: |
-         rm -rf ./FizzBuzz.Web/wwwroot/spa/build
-         cp -r ./ClientApp/build ./FizzBuzz.Web/wwwroot/spa
+      # - name: Clean old React build
+      #   run: |
+      #    rm -rf ./FizzBuzz.Web/wwwroot/spa/build
+      #    cp -r ./ClientApp/build/* ./FizzBuzz.Web/wwwroot/spa/
 
   test:
     runs-on: ubuntu-latest
@@ -83,6 +83,24 @@ jobs:
 
       - name: Publish
         run: dotnet publish ./FizzBuzz.Web/FizzBuzz.Web.csproj -c Release -o publish_output
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - name: Install React dependencies
+        working-directory: ./ClientApp
+        run: npm ci
+
+      - name: Build React app
+        working-directory: ./ClientApp
+        run: npm run build
+
+      - name: Clean old React build
+        run: |
+         rm -rf ./FizzBuzz.Web/wwwroot/spa/build
+         cp -r ./ClientApp/build/* ./FizzBuzz.Web/wwwroot/spa/
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
