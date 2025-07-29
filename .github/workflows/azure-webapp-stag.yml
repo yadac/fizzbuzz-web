@@ -81,9 +81,6 @@ jobs:
       - name: Build
         run: dotnet build ./FizzBuzz.Web/FizzBuzz.Web.csproj -c Release
 
-      - name: Publish
-        run: dotnet publish ./FizzBuzz.Web/FizzBuzz.Web.csproj -c Release -o publish_output
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -101,6 +98,9 @@ jobs:
         run: |
          rm -rf ./FizzBuzz.Web/wwwroot/spa/build
          cp -r ./ClientApp/build/* ./FizzBuzz.Web/wwwroot/spa/
+
+      - name: Publish
+        run: dotnet publish ./FizzBuzz.Web/FizzBuzz.Web.csproj -c Release -o publish_output
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
