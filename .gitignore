@@ -486,3 +486,6 @@ $RECYCLE.BIN/
 # SPA
 /ClientApp/node_modules/
 /ClientApp/build/
+
+/FizzBuzz.Web/wwwroot/spa/*
+!/FizzBuzz.Web/wwwroot/spa/.gitkeep
