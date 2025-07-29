@@ -38,6 +38,7 @@ function App() {
           <li key={index}>{item}</li>
         ))}
       </ul>
+      {result && <p>{result}</p>}
     </div>
   );
 }
