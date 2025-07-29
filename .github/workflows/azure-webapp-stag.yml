@@ -96,8 +96,9 @@ jobs:
 
       - name: Clean old React build
         run: |
-         rm -rf ./FizzBuzz.Web/wwwroot/spa/*
-         cp -r ./ClientApp/build/* ./FizzBuzz.Web/wwwroot/spa/
+          rm -rf ./FizzBuzz.Web/wwwroot/spa/
+          mkdir -p ./FizzBuzz.Web/wwwroot/spa/
+          cp -r ./ClientApp/build/* ./FizzBuzz.Web/wwwroot/spa/
 
       - name: Publish
         run: dotnet publish ./FizzBuzz.Web/FizzBuzz.Web.csproj -c Release -o publish_output
