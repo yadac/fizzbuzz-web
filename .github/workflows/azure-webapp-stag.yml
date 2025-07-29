@@ -96,7 +96,7 @@ jobs:
 
       - name: Clean old React build
         run: |
-         rm -rf ./FizzBuzz.Web/wwwroot/spa/build
+         rm -rf ./FizzBuzz.Web/wwwroot/spa/*
          cp -r ./ClientApp/build/* ./FizzBuzz.Web/wwwroot/spa/
 
       - name: Publish
