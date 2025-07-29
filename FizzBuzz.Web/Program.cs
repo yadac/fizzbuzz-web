@@ -1,5 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllers();
 // Add services to the container.
 builder.Services.AddRazorPages();
 
@@ -21,6 +22,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.MapControllers();
 app.MapRazorPages();
 app.MapFallbackToFile("/spa/{*path:nonfile}", "spa/index.html");
 
