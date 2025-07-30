@@ -2,8 +2,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FizzBuzz\FizzBuzz.csproj" />
-    <!-- <Content Include="wwwroot\spa\**" CopyToPublishDirectory="PreserveNewest" /> -->
     <Content Remove="wwwroot\spa\.gitkeep" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0" />
   </ItemGroup>
 
   <PropertyGroup>
